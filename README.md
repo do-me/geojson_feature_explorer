@@ -1,4 +1,6 @@
 # GeoJSON Feature Explorer
+
+## APP: https://do-me.github.io/geojson_feature_explorer
 A very simple static web page for exploring GeoJSON features. Simply drag and drop any GeoJSON on the screen. All Features are parsed and can be selected from the dropdown in the top right corner.
 
 ![image](https://github.com/user-attachments/assets/b11a01ae-4bb2-4352-aeb4-fdfdabafb769)
