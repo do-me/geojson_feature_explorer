@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GeoJSON Drag & Drop</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+</head>
+<body>
+    <div id="map"></div>
+    <label for="file-input" id="drop-area">
+        <p>Drag & Drop GeoJSON File Here <br> (or click to select)</p>
+    </label>
+
+    <input type="file" id="file-input" accept=".geojson,.json" onchange="handleFileInput(this.files)">
+
+     <div id="feature-dropdown">
+        <label for="feature-select">Zoom to Feature:</label>
+        <select id="feature-select" onchange="zoomToFeature(this.value)">
+        </select>
+    </div>
+
+    <div id="controls">
+        <div>
+            <label for="stroke-width">Stroke Width:</label>
+            <input type="range" id="stroke-width" min="1" max="50" value="4" oninput="updateStyle()">  <!-- Increased max -->
+        </div>
+        <div>
+            <label for="stroke-color">Stroke Color:</label>
+            <input type="color" id="stroke-color" value="#0000ff" oninput="updateStyle()">
+        </div>
+        <div>
+            <label for="fill-color">Fill Color:</label>
+            <input type="color" id="fill-color" value="#0000ff" oninput="updateStyle()">
+        </div>
+        <div>
+            <label for="fly-duration">Fly Duration (ms):</label>
+            <input type="number" id="fly-duration" value="2000" min="0" step="100">
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

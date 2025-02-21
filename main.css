@@ -1,0 +1,75 @@
+body { margin: 0; padding: 0; font-family: sans-serif; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+/* Drag & Drop Area Styling */
+#drop-area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;  /* Half screen width */
+    height: 50vh; /* Half screen height */
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: calc(25vh - 20px); /* Center text vertically */
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
+    transition: border-color 0.3s ease;
+}
+
+#drop-area.active {
+    border-color: #007bff;
+    background-color: rgba(230, 245, 255, 0.9);
+}
+
+#drop-area p {
+    margin: 0;
+}
+
+#feature-dropdown {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+    display: none;
+}
+
+#feature-dropdown select {
+    padding: 3px;
+}
+
+#controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+}
+#controls > div {
+    margin-bottom: 5px;
+}
+ label {
+     display: inline-block;
+    width: 100px;
+    margin-right: 5px;
+    text-align: right;
+}
+
+input[type="range"],
+input[type="color"],
+input[type="number"] {
+     vertical-align: middle;
+}
+/* Hidden file input */
+#file-input {
+    display: none;
+}
